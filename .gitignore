@@ -57,6 +57,7 @@ Thumbs.db
 
 # testing
 /coverage
+pnpm-lock.yaml
 
 # next.js
 /.next/
