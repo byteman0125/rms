@@ -31,6 +31,7 @@ const shortcuts: ShortcutsType[] = [
     title: 'Invoice App',
     subtitle: 'Manage Accounts'
   },
+
   // {
   //   url: '/apps/user/list',
   //   icon: 'ri-user-3-line',

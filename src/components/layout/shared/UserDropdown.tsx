@@ -22,7 +22,7 @@ import MenuItem from '@mui/material/MenuItem'
 import Button from '@mui/material/Button'
 
 // Third-party Imports
-import { signOut, useSession } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
 
 // Type Imports
 import type { Locale } from '@configs/i18n'
@@ -48,6 +48,7 @@ const UserDropdown = () => {
   // States
   const [open, setOpen] = useState(false)
   const [user, setUser] = useState(null);
+
   // Refs
   const anchorRef = useRef<HTMLDivElement>(null)
 
@@ -60,8 +61,10 @@ const UserDropdown = () => {
   useEffect(() => {
     const getUser = async () => {
       const { data: { session } } = await supabase.auth.getSession()
+
       setUser(session?.user.user_metadata?.userName || null)
     }
+
     getUser()
   }, [])
 

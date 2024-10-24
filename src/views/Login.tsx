@@ -6,6 +6,8 @@ import { useState } from 'react'
 // Next Imports
 import Link from 'next/link'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
+
+
 // MUI Imports
 import Typography from '@mui/material/Typography'
 import TextField from '@mui/material/TextField'
@@ -14,11 +16,8 @@ import InputAdornment from '@mui/material/InputAdornment'
 import Checkbox from '@mui/material/Checkbox'
 import Button from '@mui/material/Button'
 import FormControlLabel from '@mui/material/FormControlLabel'
-import Divider from '@mui/material/Divider'
-import Alert from '@mui/material/Alert'
 
 // Third-party Imports
-import { signIn } from 'next-auth/react'
 import { Controller, useForm } from 'react-hook-form'
 import { valibotResolver } from '@hookform/resolvers/valibot'
 import { object, minLength, string, email, pipe, nonEmpty } from 'valibot'
@@ -27,6 +26,8 @@ import type { InferInput } from 'valibot'
 import classnames from 'classnames'
 
 // Type Imports
+import { toast } from 'react-toastify'
+
 import type { Mode } from '@core/types'
 import type { Locale } from '@/configs/i18n'
 
@@ -44,7 +45,6 @@ import { useSettings } from '@core/hooks/useSettings'
 // Util Imports
 import { getLocalizedUrl } from '@/utils/i18n'
 import { supabase } from '@/utils/supabase'
-import { toast } from 'react-toastify'
 
 type ErrorType = {
   message: string[]
